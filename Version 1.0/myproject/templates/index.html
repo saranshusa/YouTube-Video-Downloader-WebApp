@@ -1,0 +1,124 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>YouTube Video Downloader</title>
+    <link rel="stylesheet" href="{% static 'style.css' %}" />
+    <link
+      rel="shortcut icon"
+      href="{% static 'favicon.ico'%}"
+      type="image/x-icon"
+    />
+  </head>
+  <body>
+    <div class="app">
+      <div class="logo">
+        <svg
+          class="yt-logo"
+          viewBox="0 0 128 126"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <g clip-path="url(#clip0)">
+            <path
+              d="M125.451 30.9891C124.727 28.2659 123.301 25.7808 121.315 23.7819C119.329 21.7832 116.853 20.3411 114.134 19.6C104.127 16.9091 64.1269 16.9091 64.1269 16.9091C64.1269 16.9091 24.127 16.9091 14.1197 19.6C11.4013 20.3411 8.92515 21.7832 6.93915 23.7819C4.95317 25.7808 3.52699 28.2659 2.80331 30.9891C0.126953 41.04 0.126953 62 0.126953 62C0.126953 62 0.126953 82.96 2.80331 93.0109C3.52699 95.7341 4.95317 98.2192 6.93915 100.218C8.92515 102.217 11.4013 103.659 14.1197 104.4C24.127 107.091 64.1269 107.091 64.1269 107.091C64.1269 107.091 104.127 107.091 114.134 104.4C116.853 103.659 119.329 102.217 121.315 100.218C123.301 98.2192 124.727 95.7341 125.451 93.0109C128.127 82.96 128.127 62 128.127 62C128.127 62 128.127 41.04 125.451 30.9891Z"
+              fill="#FF0302"
+            />
+            <path
+              d="M51.036 81.0328V42.9675L84.4907 62.0003L51.036 81.0328Z"
+              fill="#FEFEFE"
+            />
+          </g>
+          <defs>
+            <clipPath id="clip0">
+              <rect
+                width="128"
+                height="128"
+                fill="white"
+                transform="translate(0 -2)"
+              />
+            </clipPath>
+          </defs>
+        </svg>
+        <p>YouTube Video Downloader</p>
+      </div>
+
+      <div class="search">
+        <form action="generate" method="POST">
+          {% csrf_token %}
+          <input
+            type="text"
+            name="video_url"
+            id="video_url"
+            placeholder="Enter YouTube URL"
+            value="{{search_url}}"
+          /><br />
+          <input type="submit" value="Get Link" id="get_link" />
+        </form>
+      </div>
+      <div class="details">
+        <div
+          class="thumbnail"
+          style="background-image: url({{thumbnail_url}});"
+        ></div>
+        <div class="video-title">
+          <p>{{video_name}}</p>
+        </div>
+      </div>
+
+      <div class="resolution">
+        <form action="">
+          <input type="text" name="720p" id="hide" /><input
+            type="submit"
+            class="submit-btn"
+            value="720p"
+          />
+        </form>
+        <form action="">
+          <input type="text" name="360p" id="hide" /><input
+            type="submit"
+            class="submit-btn"
+            value="360p"
+          />
+        </form>
+        <form action="download144p" method="">
+          <input
+            type="text"
+            name="144p"
+            id="hide"
+            value="{{search_url}}"
+          /><input type="submit" class="submit-btn" value="144p" />
+        </form>
+        <button onclick="show()" class="submit-btn">More Resolutions</button>
+        <form action="">
+          <input type="text" name="480p" id="hide" /><input
+            type="submit"
+            class="submit-btn"
+            id="more"
+            value="480p Video + Separate Audio"
+          />
+        </form>
+        <form action="">
+          <input type="text" name="1080p" id="hide" /><input
+            type="submit"
+            class="submit-btn"
+            id="more"
+            value="1080p Video + Separate Audio"
+          />
+        </form>
+      </div>
+      <div class="credits"><p>Developed by SARANSH</p></div>
+    </div>
+  </body>
+  <script>
+    function show() {
+      document.getElementsByTagName("input")[9].style.display = "initial";
+      document.getElementsByTagName("input")[11].style.display = "initial";
+      document.getElementsByTagName("button")[0].style.display = "none";
+    }
+  </script>
+</html>

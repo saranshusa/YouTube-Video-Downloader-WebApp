@@ -1,0 +1,168 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@100&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Arimo:wght@600&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  color: white;
+}
+
+::placeholder {
+  color: #a1a1a1;
+  opacity: 1;
+  font-size: 1em;
+  font-weight: 600;
+  letter-spacing: 1.2px;
+  font-family: "Roboto Mono", monospace;
+}
+
+body {
+  background-color: rgb(87, 255, 241);
+}
+
+.app {
+  border-radius: 25px;
+  margin: 5px;
+  max-width: 479px;
+  text-align: center;
+  background-color: rgb(27, 27, 27);
+}
+
+.yt-logo {
+  margin-top: 1rem;
+  width: 5em;
+}
+
+.logo p {
+  backdrop-filter: blur(5px);
+  font-family: "Roboto Mono", monospace;
+  font-size: 1.2em;
+  font-weight: 800;
+  border-radius: 10px;
+  border: grey 1px solid;
+  padding: 5px 10px;
+  margin: 0 40px;
+  letter-spacing: 1px;
+}
+
+.search {
+  margin-top: 4rem;
+}
+
+#video_url {
+  width: 80%;
+  border-radius: 25px;
+  border: none;
+  background-color: rgb(54, 54, 54);
+  height: 3rem;
+  color: white;
+  font-family: "Roboto Mono", monospace;
+  font-size: 0.9em;
+  padding: 0 20px;
+  text-align: center;
+}
+
+#video_url:focus {
+  outline: none;
+}
+
+#get_link {
+  background-color: rgb(231, 33, 33);
+  margin-top: 1.5rem;
+  padding: 10px 25px;
+  border-radius: 25px;
+  border: none;
+  font-family: "Roboto Mono", monospace;
+  font-size: 0.9em;
+  font-weight: 800;
+  letter-spacing: 1px;
+}
+
+.details {
+  margin-top: 1.5rem;
+}
+
+.thumbnail {
+  background-position: center;
+  background-size: cover;
+  margin-left: auto;
+  margin-right: auto;
+  width: 210px;
+  height: 118px;
+}
+
+.video-title {
+  border-radius: 10px;
+  margin-top: 10px;
+  height: 3rem;
+  margin: 10px 25px;
+  background: linear-gradient(to bottom, rgb(27, 27, 27), rgb(32, 32, 32));
+}
+
+.video-title p {
+  padding: 5px 5px;
+  font-size: 0.9em;
+  font-family: "Roboto Mono", monospace;
+}
+
+.resolution {
+  margin-top: 2rem;
+}
+
+#hide {
+  display: none;
+}
+
+.submit-btn {
+  color: rgb(255, 139, 85);
+  font-family: "Arimo", sans-serif;
+  width: 20rem;
+  margin-bottom: 15px;
+  background-color: rgb(54, 54, 54);
+  border: none;
+  border-radius: 25px;
+  padding: 10px;
+  font-size: 1em;
+}
+
+.credits {
+  margin-top: 20px;
+}
+
+.credits p {
+  display: inline;
+  max-width: 75%;
+  padding: 5px 10px;
+  background-color: rgb(158, 255, 158);
+  font-size: 0.8em;
+  font-family: "Arimo", sans-serif;
+  color: black;
+  border-radius: 5px 5px 0px 0px;
+}
+
+#more {
+  display: none;
+}
+
+@media (min-width: 500px) {
+  .app {
+    max-width: 100vw;
+  }
+
+  .resolution {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .submit-btn {
+    max-width: 70vw;
+    margin-right: 15px;
+    margin-left: 15px;
+    margin-bottom: 30px;
+  }
+
+  .video-title {
+    height: 2rem;
+  }
+}
